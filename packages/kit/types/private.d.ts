@@ -1,5 +1,5 @@
 // This module contains types that are visible in the documentation,
-// but which cannot be imported from `@sveltejs/kit`. Care should
+// but which cannot be imported from `@chientrm/kit`. Care should
 // be taken to avoid breaking changes when editing this file
 
 export interface AdapterEntry {

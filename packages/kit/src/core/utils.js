@@ -18,15 +18,15 @@ export const runtime_prefix = posixify_path(runtime_directory);
 
 /**
  * This allows us to import SvelteKit internals that aren't exposed via `pkg.exports` in a
- * way that works whether `@sveltejs/kit` is installed inside the project's `node_modules`
+ * way that works whether `@chientrm/kit` is installed inside the project's `node_modules`
  * or in a workspace root
  */
 export const runtime_base = runtime_directory.startsWith(process.cwd())
 	? `/${path.relative('.', runtime_directory)}`
 	: `/@fs${
-			// Windows/Linux separation - Windows starts with a drive letter, we need a / in front there
-			runtime_directory.startsWith('/') ? '' : '/'
-	  }${runtime_directory}`;
+	// Windows/Linux separation - Windows starts with a drive letter, we need a / in front there
+	runtime_directory.startsWith('/') ? '' : '/'
+	}${runtime_directory}`;
 
 /** @param {string} str */
 function posixify_path(str) {
@@ -34,7 +34,7 @@ function posixify_path(str) {
 	return `/${parsed.dir.slice(parsed.root.length).split(path.sep).join('/')}/${parsed.base}`;
 }
 
-function noop() {}
+function noop() { }
 
 /** @param {{ verbose: boolean }} opts */
 export function logger({ verbose }) {

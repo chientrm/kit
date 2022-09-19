@@ -1,4 +1,4 @@
-import type * as Kit from '@sveltejs/kit';
+import type * as Kit from '@chientrm/kit';
 
 type RouteParams = { slug: string };
 type MaybeWithVoid<T> = {} extends T ? T | void : T;

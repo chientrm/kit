@@ -2,7 +2,7 @@
  * It's possible to tell SvelteKit how to type objects inside your app by declaring the `App` namespace. By default, a new project will have a file called `src/app.d.ts` containing the following:
  *
  * ```ts
- * /// <reference types="@sveltejs/kit" />
+ * /// <reference types="@chientrm/kit" />
  *
  * declare namespace App {
  * 	interface Locals {}
@@ -93,7 +93,7 @@ declare module '$app/environment' {
  * ```
  */
 declare module '$app/forms' {
-	import type { ActionResult } from '@sveltejs/kit';
+	import type { ActionResult } from '@chientrm/kit';
 
 	export type SubmitFunction<
 		Success extends Record<string, unknown> | undefined = Record<string, any>,
@@ -164,7 +164,7 @@ declare module '$app/forms' {
  * ```
  */
 declare module '$app/navigation' {
-	import { Navigation } from '@sveltejs/kit';
+	import { Navigation } from '@chientrm/kit';
 
 	/**
 	 * If called when the page is being updated following a navigation (in `onMount` or `afterNavigate` or an action, for example), this disables SvelteKit's built-in scroll handling.
@@ -279,7 +279,7 @@ declare module '$app/paths' {
  */
 declare module '$app/stores' {
 	import { Readable } from 'svelte/store';
-	import { Navigation, Page } from '@sveltejs/kit';
+	import { Navigation, Page } from '@chientrm/kit';
 
 	/**
 	 * A readable store whose value contains page data.
@@ -333,17 +333,17 @@ declare module '$service-worker' {
 	export const version: string;
 }
 
-declare module '@sveltejs/kit/hooks' {
-	import { Handle } from '@sveltejs/kit';
+declare module '@chientrm/kit/hooks' {
+	import { Handle } from '@chientrm/kit';
 
 	/**
 	 * A helper function for sequencing multiple `handle` calls in a middleware-like manner.
 	 *
 	 * ```js
 	 * /// file: src/hooks.js
-	 * import { sequence } from '@sveltejs/kit/hooks';
+	 * import { sequence } from '@chientrm/kit/hooks';
 	 *
-	 * /** @type {import('@sveltejs/kit').Handle} *\/
+	 * /** @type {import('@chientrm/kit').Handle} *\/
 	 * async function first({ event, resolve }) {
 	 * 	console.log('first pre-processing');
 	 * 	const result = await resolve(event, {
@@ -357,7 +357,7 @@ declare module '@sveltejs/kit/hooks' {
 	 * 	return result;
 	 * }
 	 *
-	 * /** @type {import('@sveltejs/kit').Handle} *\/
+	 * /** @type {import('@chientrm/kit').Handle} *\/
 	 * async function second({ event, resolve }) {
 	 * 	console.log('second pre-processing');
 	 * 	const result = await resolve(event, {
@@ -392,7 +392,7 @@ declare module '@sveltejs/kit/hooks' {
 /**
  * A polyfill for `fetch` and its related interfaces, used by adapters for environments that don't provide a native implementation.
  */
-declare module '@sveltejs/kit/node/polyfills' {
+declare module '@chientrm/kit/node/polyfills' {
 	/**
 	 * Make various web APIs available as globals:
 	 * - `crypto`
@@ -407,7 +407,7 @@ declare module '@sveltejs/kit/node/polyfills' {
 /**
  * Utilities used by adapters for Node-like environments.
  */
-declare module '@sveltejs/kit/node' {
+declare module '@chientrm/kit/node' {
 	export function getRequest(opts: {
 		base: string;
 		request: import('http').IncomingMessage;
@@ -416,7 +416,7 @@ declare module '@sveltejs/kit/node' {
 	export function setResponse(res: import('http').ServerResponse, response: Response): void;
 }
 
-declare module '@sveltejs/kit/vite' {
+declare module '@chientrm/kit/vite' {
 	import { Plugin } from 'vite';
 
 	/**

@@ -60,8 +60,7 @@ function get_raw_body(req, body_size_limit) {
 				if (size > length) {
 					req.destroy(
 						new Error(
-							`request body size exceeded ${
-								content_length ? "'content-length'" : 'BODY_SIZE_LIMIT'
+							`request body size exceeded ${content_length ? "'content-length'" : 'BODY_SIZE_LIMIT'
 							} of ${length}`
 						)
 					);
@@ -87,7 +86,7 @@ function get_raw_body(req, body_size_limit) {
 	});
 }
 
-/** @type {import('@sveltejs/kit/node').getRequest} */
+/** @type {import('@chientrm/kit/node').getRequest} */
 export async function getRequest({ request, base, bodySizeLimit }) {
 	let headers = /** @type {Record<string, string>} */ (request.headers);
 	if (request.httpVersionMajor === 2) {
@@ -108,7 +107,7 @@ export async function getRequest({ request, base, bodySizeLimit }) {
 	});
 }
 
-/** @type {import('@sveltejs/kit/node').setResponse} */
+/** @type {import('@chientrm/kit/node').setResponse} */
 export async function setResponse(res, response) {
 	const headers = Object.fromEntries(response.headers);
 
@@ -140,7 +139,7 @@ export async function setResponse(res, response) {
 
 		// If the reader has already been interrupted with an error earlier,
 		// then it will appear here, it is useless, but it needs to be catch.
-		reader.cancel(error).catch(() => {});
+		reader.cancel(error).catch(() => { });
 		if (error) res.destroy(error);
 	};
 
@@ -150,7 +149,7 @@ export async function setResponse(res, response) {
 	next();
 	async function next() {
 		try {
-			for (;;) {
+			for (; ;) {
 				const { done, value } = await reader.read();
 
 				if (done) break;

@@ -9,13 +9,23 @@
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
 		"paths": {
-			"@sveltejs/kit": ["./types/index"],
+			"@chientrm/kit": [
+				"./types/index"
+			],
 			// internal use only
-			"types": ["./types/internal"]
+			"types": [
+				"./types/internal"
+			]
 		},
 		"noUnusedLocals": true,
 		"noUnusedParameters": true
 	},
-	"include": ["scripts/**/*", "src/**/*", "types/**/*"],
-	"exclude": ["./**/write_types/test/*/_expected/**"]
+	"include": [
+		"scripts/**/*",
+		"src/**/*",
+		"types/**/*"
+	],
+	"exclude": [
+		"./**/write_types/test/*/_expected/**"
+	]
 }

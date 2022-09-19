@@ -1,9 +1,9 @@
 {
-	"name": "@sveltejs/kit",
-	"version": "1.0.0-next.484",
+	"name": "@chientrm/kit",
+	"version": "1.0.0-next.484-2",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sveltejs/kit",
+		"url": "https://github.com/chientrm/kit",
 		"directory": "packages/kit"
 	},
 	"license": "MIT",

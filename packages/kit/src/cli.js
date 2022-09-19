@@ -85,7 +85,7 @@ function replace(command) {
 
 			const steps = [
 				'Install vite as a devDependency with npm/pnpm/etc',
-				'Create a vite.config.js with the @sveltejs/kit/vite plugin (see below)',
+				'Create a vite.config.js with the @chientrm/kit/vite plugin (see below)',
 				`Update your package.json scripts to reference \`vite ${command}\` instead of \`svelte-kit ${command}\``
 			];
 
@@ -96,7 +96,7 @@ function replace(command) {
 			console.error(
 				`
 				${colors.grey('// vite.config.js')}
-				import { sveltekit } from '@sveltejs/kit/vite';
+				import { sveltekit } from '@chientrm/kit/vite';
 
 				/** @type {import('vite').UserConfig} */
 				const config = {

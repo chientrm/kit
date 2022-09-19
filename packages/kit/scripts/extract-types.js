@@ -91,8 +91,8 @@ function strip_origin(str) {
 	const node = ts.createSourceFile('index.d.ts', code, ts.ScriptTarget.Latest);
 
 	modules.push({
-		name: '@sveltejs/kit',
-		comment: 'The following can be imported from `@sveltejs/kit`:',
+		name: '@chientrm/kit',
+		comment: 'The following can be imported from `@chientrm/kit`:',
 		...get_types(code, node.statements)
 	});
 }

@@ -17,7 +17,7 @@ import { compact } from '../../../utils/array.js';
 let ts = undefined;
 try {
 	ts = (await import('typescript')).default;
-} catch {}
+} catch { }
 
 const cwd = process.cwd();
 
@@ -128,7 +128,7 @@ function update_types(config, routes, route) {
 
 	try {
 		fs.mkdirSync(outdir, { recursive: true });
-	} catch {}
+	} catch { }
 
 	const output_files = compact(
 		fs.readdirSync(outdir).map((name) => {
@@ -151,7 +151,7 @@ function update_types(config, routes, route) {
 	const to_delete = new Set(output_files.map((file) => file.name));
 
 	// now generate new types
-	const imports = [`import type * as Kit from '@sveltejs/kit';`];
+	const imports = [`import type * as Kit from '@chientrm/kit';`];
 
 	/** @type {string[]} */
 	const declarations = [];

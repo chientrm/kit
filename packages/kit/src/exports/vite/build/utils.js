@@ -17,11 +17,11 @@ export async function create_build(config) {
 	);
 
 	const chunks = output.filter(
-		/** @returns {output is OutputChunk} */ (output) => output.type === 'chunk'
+		/** @returns {output is OutputChunk} */(output) => output.type === 'chunk'
 	);
 
 	const assets = output.filter(
-		/** @returns {output is OutputAsset} */ (output) => output.type === 'asset'
+		/** @returns {output is OutputAsset} */(output) => output.type === 'asset'
 	);
 
 	return { chunks, assets };
@@ -125,10 +125,10 @@ export function get_default_build_config({ config, input, ssr, outDir }) {
 			alias: get_aliases(config.kit)
 		},
 		optimizeDeps: {
-			exclude: ['@sveltejs/kit']
+			exclude: ['@chientrm/kit']
 		},
 		ssr: {
-			noExternal: ['@sveltejs/kit']
+			noExternal: ['@chientrm/kit']
 		},
 		worker: {
 			rollupOptions: {
