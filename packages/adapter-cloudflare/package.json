@@ -1,10 +1,10 @@
 {
-	"name": "@sveltejs/adapter-cloudflare",
+	"name": "@chientrm/adapter-cloudflare",
 	"version": "2.3.1",
 	"description": "Adapter for building SvelteKit applications on Cloudflare Pages with Workers integration",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sveltejs/kit",
+		"url": "https://github.com/chientrm/kit",
 		"directory": "packages/adapter-cloudflare"
 	},
 	"license": "MIT",
